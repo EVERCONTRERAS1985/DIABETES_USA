@@ -18,7 +18,7 @@ def run_training() -> None:
         test_size=config.model_config.test_size,
         # we are setting the random seed here
         # for reproducibility
-        random_state=config.model_config.random_state,
+        random_state=config.model_config.split_random_state,
     )
     y_train = y_train.map(config.model_config.qual_mappings)
 

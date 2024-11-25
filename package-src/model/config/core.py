@@ -3,6 +3,7 @@ from typing import Dict, List, Optional, Sequence
 
 from pydantic import BaseModel
 from strictyaml import YAML, load
+from typing import Tuple
 
 import model
 
@@ -35,13 +36,14 @@ class ModelConfig(BaseModel):
     target: str
     features: List[str]
     test_size: float
-    hidden_layer_sizes: int
-    Learning_rate_init: float
+    split_random_state: int
+    hidden_layer_sizes: Tuple[int, ...]
+    learning_rate_init: float
     max_iter: int
-    random_state: int
+    model_random_state: int
     qual_vars: List[str]
-    categorical_vars: Sequence[str]
-    qual_mappings: Dict[str, int]
+    categorical_vars: Sequence[str]=[]
+    qual_mappings: Dict[float, int]
 
 
 class Config(BaseModel):

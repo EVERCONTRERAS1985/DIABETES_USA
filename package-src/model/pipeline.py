@@ -9,9 +9,9 @@ diabetes_pipe = Pipeline(
         ("Red Neuronal",
             MLPClassifier(
                 hidden_layer_sizes = config.model_config.hidden_layer_sizes,
-                Learning_rate_init = config.model_config.Learning_rate_init, 
-                max_iter = config.model_config.ax_iter,
-                random_state=config.model_config.random_state_m,
+                learning_rate_init = config.model_config.learning_rate_init, 
+                max_iter = config.model_config.max_iter,
+                random_state=config.model_config.model_random_state,
             ),
         ),
     ]

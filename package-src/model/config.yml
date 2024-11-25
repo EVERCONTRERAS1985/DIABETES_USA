@@ -13,9 +13,9 @@ features:
   - HighBP
   - HighChol
   - BMI
-  - Age
   - HeartDiseaseorAttack
   - GenHlth
+  - Age
   
 
 temp_features:
@@ -29,26 +29,26 @@ pipeline_save_file: modelo-diabetes-output
 test_size: 0.25
 
 # semilla
-random_state: 42
+split_random_state: 42
 
 # hiperparámetros del modelo 
-hidden_layer_sizes: (300,)
+hidden_layer_sizes:
+  - 300
 
-Learning_rate_init:  0.001
+learning_rate_init:  0.001
 
 max_iter: 600
 
-random_state_m: 64
+model_random_state: 64
 
 # variables a mapear
-qual_vars:
-  - Diabetes_012
-
+qual_vars:  # Cambiado de [] a una lista explícita
+  -
 # 
-categorical_vars:
-  - Diabetes_012
+categorical_vars:  # Cambiado de [] a una lista explícita
+  -
 
-# mapeo de variables
+# mapeo de variables cualitativas
 qual_mappings:
-  Con_diabetes: 1
-  Sin_diabetes: 0
+  0.0: 0
+  1.0: 1
