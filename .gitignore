@@ -1,2 +1,9 @@
-*.csv
+# Ignorar todo por defecto
+/*
+
+# Excepciones: permitir la carpeta package-src y su contenido
+!package-src/
+!package-src/**
+
+# Excluir cualquier archivo no deseado dentro de package-src
 .DS_Store
